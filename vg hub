@@ -2054,7 +2054,7 @@ spawn(
                                     ReplicatedStorage.RemoteEvents.MovesetSelectorRemote:FireServer("Moveset2")
                                 end
                                 if not Player.Backpack:FindFirstChild("Requiem Arrow") and Level.Value > 2 then
-                                    game.ReplicatedStorage.RemoteEvents.BuyItemRemote:FireServer("heart")
+                                    game.ReplicatedStorage.RemoteEvents.BuyItemRemote:FireServer("Heart")
                                 end
                             end
                         end
