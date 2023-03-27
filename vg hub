@@ -2042,7 +2042,7 @@ spawn(
                             wait(getgenv().delay2)
                             if #Player.Backpack:GetChildren() >= 20 then
                                 for i, v in pairs(Player.Backpack:GetChildren()) do
-                                    if v.Name ~= "Requiem Arrow" and v.Name:find("Arrow") then
+                                    if v.Name ~= "Requiem Arrow" and v.Name:find("Heart") then
                                         v.Parent = Character
                                         v:Destroy()
                                     end
@@ -2053,8 +2053,7 @@ spawn(
                                     ReplicatedStorage.RemoteEvents.ItemRemote:FireServer()
                                     ReplicatedStorage.RemoteEvents.MovesetSelectorRemote:FireServer("Moveset2")
                                 end
-                                if not Player.Backpack:FindFirstChild("Requiem Arrow") and Level.Value > 300 then
-                                    game.ReplicatedStorage.RemoteEvents.BuyItemRemote:FireServer("Arrow")
+                               
                                 end
                             end
                         end
