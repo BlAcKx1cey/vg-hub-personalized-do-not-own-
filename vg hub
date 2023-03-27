@@ -2040,15 +2040,9 @@ spawn(
                     if Values.Ability2.Value ~= Settings.WantedLegendary then
                         if Settings.OnlyMysticals and not table.find(Mysticals, Values.Ability2.Value) then
                             wait(getgenv().delay2)
-                            if #Player.Backpack:GetChildren() >= 20 then
-                                for i, v in pairs(Player.Backpack:GetChildren()) do
-                                    if v.Name ~= "Requiem Arrow" and v.Name:find("Arrow") then
-                                        v.Parent = Character
-                                        v:Destroy()
-                                    end
-                                end
-                            else
-                                if Player.Backpack:FindFirstChild("Requiem Arrow") and Level.Value == 1000 then
+                            
+                          
+                               if Player.Backpack:FindFirstChild("Requiem Arrow") and Level.Value == 1000 then
                                     Character.Humanoid:EquipTool(Player.Backpack:FindFirstChild("Requiem Arrow"))
                                     ReplicatedStorage.RemoteEvents.ItemRemote:FireServer()
                                     ReplicatedStorage.RemoteEvents.MovesetSelectorRemote:FireServer("Moveset2")
