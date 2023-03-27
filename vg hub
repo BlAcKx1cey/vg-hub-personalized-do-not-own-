@@ -2053,7 +2053,7 @@ spawn(
                                     ReplicatedStorage.RemoteEvents.ItemRemote:FireServer()
                                     ReplicatedStorage.RemoteEvents.MovesetSelectorRemote:FireServer("Moveset2")
                                 end
-                                if not Player.Backpack:FindFirstChild("Requiem Arrow") and Level.Value > 1 then
+                                if not Player.Backpack:FindFirstChild("Requiem Arrow") and Level.Value > 2 then
                                     game.ReplicatedStorage.RemoteEvents.BuyItemRemote:FireServer("Arrow")
                                 end
                             end
