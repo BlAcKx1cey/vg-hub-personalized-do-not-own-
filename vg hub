@@ -2090,22 +2090,20 @@ spawn(
                         wait(getgenv().delay2)
                         if #Player.Backpack:GetChildren() >= 10 then
                             for i, v in pairs(Player.Backpack:GetChildren()) do
-                                if v.Name ~= "Platnium Heart" and v.Name:find("Heart") then
+                                if v.Name ~= "Requiem Arrow" and v.Name:find("Heart") then
                                     v.Parent = Character
                                     v:Destroy()
                                 end
                             end
                         else
                             if
-                                Player.Backpack:FindFirstChild("Platnium Heart") and Level.Value == 1000 and
+                                Player.Backpack:FindFirstChild("Requiem Arrow") and Level.Value == 1000 and
                                     Values.Race.Value ~= Settings.LegRace
                              then
-                                Character.Humanoid:EquipTool(Player.Backpack:FindFirstChild("Platnium Heart"))
+                                Character.Humanoid:EquipTool(Player.Backpack:FindFirstChild("Requiem Arrow"))
                                 ReplicatedStorage.RemoteEvents.ItemRemote:FireServer()
                             end
-                            if not Player.Backpack:FindFirstChild("Platnium Heart") and Level.Value > 300 then
-                                game.ReplicatedStorage.RemoteEvents.BuyItemRemote:FireServer("Heart")
-                            end
+                            
                         end
                     end
                 end
