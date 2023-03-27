@@ -2042,9 +2042,9 @@ spawn(
                             wait(getgenv().delay2)
                             if #Player.Backpack:GetChildren() >= 20 then
                                 for i, v in pairs(Player.Backpack:GetChildren()) do
-                                    if v.Name ~= "Requiem Arrow" and v.Name:find("Heart") then
+                                    if v.Name ~= "Requiem Arrow" and v.Name:find("Arrow") then
                                         v.Parent = Character
-                                        v:Destroy()
+                                       
                                     end
                                 end
                             else
@@ -2053,7 +2053,8 @@ spawn(
                                     ReplicatedStorage.RemoteEvents.ItemRemote:FireServer()
                                     ReplicatedStorage.RemoteEvents.MovesetSelectorRemote:FireServer("Moveset2")
                                 end
-                               
+                                if not Player.Backpack:FindFirstChild("Requiem Arrow") and Level.Value > 300 
+                                   
                                 end
                             end
                         end
@@ -2089,20 +2090,22 @@ spawn(
                         wait(getgenv().delay2)
                         if #Player.Backpack:GetChildren() >= 10 then
                             for i, v in pairs(Player.Backpack:GetChildren()) do
-                                if v.Name ~= "Requiem Arrow" and v.Name:find("Heart") then
+                                if v.Name ~= "Platnium Heart" and v.Name:find("Heart") then
                                     v.Parent = Character
                                     v:Destroy()
                                 end
                             end
                         else
                             if
-                                Player.Backpack:FindFirstChild("Requiem Arrow") and Level.Value == 1000 and
+                                Player.Backpack:FindFirstChild("Platnium Heart") and Level.Value == 1000 and
                                     Values.Race.Value ~= Settings.LegRace
                              then
-                                Character.Humanoid:EquipTool(Player.Backpack:FindFirstChild("Requiem Arrow"))
+                                Character.Humanoid:EquipTool(Player.Backpack:FindFirstChild("Platnium Heart"))
                                 ReplicatedStorage.RemoteEvents.ItemRemote:FireServer()
                             end
-                            
+                            if not Player.Backpack:FindFirstChild("Platnium Heart") and Level.Value > 300 then
+                                game.ReplicatedStorage.RemoteEvents.BuyItemRemote:FireServer("Heart")
+                            end
                         end
                     end
                 end
@@ -2405,7 +2408,7 @@ spawn(
 end)
 
 Toggle1:AddToolTip("Warning this uses your cash use it wisely")
-local Slider2 = Section1:CreateSlider("Giving Money Amount", 0,10000,nil,false, function(Value)
+local Slider2 = Section1:CreateSlider("Giving Money Amount", 0,1000,nil,false, function(Value)
     Settings.Amount = Value
 end)
 
